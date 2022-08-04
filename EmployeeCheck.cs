@@ -47,6 +47,5 @@ namespace EmployeeWageComputation
             }
             Console.WriteLine("total Emp Wage  : " + totalEmpWage);
         }
-
     }
 }
