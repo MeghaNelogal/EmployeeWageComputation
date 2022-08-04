@@ -9,7 +9,6 @@ namespace EmployeewageComputation
             Console.WriteLine("Welome To Employee Wage Computation");
 
             EmployeeCheck employee = new EmployeeCheck();
-
             employee.CheckEmployeeAttendance();
         }
    }
