@@ -12,7 +12,6 @@ namespace EmployeewageComputation
             employee.CheckEmployeeAttendance();
             CalculateMonthlyWage monthlyWage = new CalculateMonthlyWage();
             monthlyWage.CalculateMonthlyEmoployeeWage();
-
         }
-    }
+   }
 }
