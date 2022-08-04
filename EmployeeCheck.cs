@@ -14,36 +14,39 @@ namespace EmployeeWageComputation
         public void CheckEmployeeAttendance()
         {
             //Constant
-            int IS_FULL_TIME = 1;
-            int IS_PART_TIME = 2;
-            int EMP_RATE_PER_HOUR = 20;
-
+             const int IS_FULL_TIME = 1;
+             const int IS_PART_TIME = 2;
+             const int EMP_RATE_PER_HOUR = 20;
+             const int NUM_OF_WORKING_DAYS = 20;
             //Variables
             int empHrs = 0;
             int empWage = 0;
-            Random random = new Random();
+            int totalEmpWage = 0;
 
-            int empCheck = random.Next(3);
-
-            switch (empCheck)
+            for (int day = 0; day < NUM_OF_WORKING_DAYS; day++)
             {
-                case 1:
-                    Console.WriteLine("IS_FULL_TIME is :");
-                    empHrs = 8;
-                    break;
-                case 2:
-                    Console.WriteLine("IS_PART_TIME is :");
-                    empHrs = 4;
-                    break;
-                default:
-                    empHrs = 0;
-                    break;
+                Random random = new Random();
+
+                int empCheck = random.Next(3);
+
+                switch (empCheck)
+                {
+                    case IS_PART_TIME:
+                        empHrs = 4;
+                        break;
+                    case IS_FULL_TIME:
+                        empHrs = 8;
+                        break;
+                    default:
+                        empHrs = 0;
+                        break;
+                }
+                empWage = empHrs * EMP_RATE_PER_HOUR;
+                totalEmpWage += empWage;
+                Console.WriteLine("Emp Wage : " + empWage);
             }
-            empWage = empHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Emp Wage -> " + empWage);
-            empWage = empHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Emp Wage -> " + empWage);
+            Console.WriteLine("total Emp Wage  : " + totalEmpWage);
         }
+
     }
 }
-
