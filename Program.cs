@@ -8,15 +8,12 @@ namespace EmployeewageComputation
         {
             Console.WriteLine("Welome To Employee Wage Computation");
 
-            CalculateMonthlyWage samsung = new CalculateMonthlyWage("Samsung", 20, 5, 10);
-            CalculateMonthlyWage reliance = new CalculateMonthlyWage("Reliance", 10, 4, 15);
-            CalculateMonthlyWage airtel = new CalculateMonthlyWage("Airtel", 30, 5, 20);
-            samsung.ComputeEmployeeWage();
-            Console.WriteLine(samsung.displaySalary() + "\n");
-            reliance.ComputeEmployeeWage();
-            Console.WriteLine(reliance.displaySalary() + "\n");
-            airtel.ComputeEmployeeWage();
-            Console.WriteLine(airtel.displaySalary() + "\n");
+            CalculateMonthlyWage company = new CalculateMonthlyWage();
+            company.AddCompanyEmpWage("SAMSUNG", 400, 200, 20);
+            company.AddCompanyEmpWage("RELIANCE", 500, 100, 15);
+            company.AddCompanyEmpWage("AIRTEL", 600, 150, 18);
+            company.ComputeEmpWage();
+            Console.WriteLine(company.ToString());
         }
    }
 }
